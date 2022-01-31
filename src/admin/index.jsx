@@ -18,7 +18,7 @@ const Admin = () => {
           datasets: [
                {
                     data: [4, 2, 3, 1, 6, 5],
-                    backgroundColor:'green',
+                   
                     backgroundColor: [
                          'rgba(255, 99, 132, 0.6) ',
                          'rgba(54, 162, 235, 0.6) ',
