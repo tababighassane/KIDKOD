@@ -31,15 +31,18 @@
   flex-direction: column;
   align-items: center;
   padding: 10rem 1rem;
-  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-  background-image: url("https://i.pinimg.com/originals/b6/ae/b5/b6aeb507a9e66a0a05e255f287c432e1.jpg");
+  /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+  background-image: url("https://cdn.discordapp.com/attachments/902991650727538769/937811118712320010/zzz.png");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 35vw;
+  width: 40vw;
   height: 100vh;
 }
 .left-div h1 {
   font-weight: 900;
+}
+.titlee{
+  font-size: 40px !important;
 }
 
 .cursor-pointer {
@@ -51,6 +54,7 @@
   flex-direction: column;
   width : 75vw;
   height: 100vh;
+  margin-top: -100px !important;
 }
 .contact > *{
   margin: .5rem 0;
@@ -79,14 +83,14 @@
   width: 150px;
   height: 40px;
   color: rgb(255, 255, 255);
-  background-color: #ea512e;
+  background-color: #2e60ea;
   border-radius: 7px;
   cursor: pointer;
   border: none;
   font-size: larger;
 }
 .contact button:hover {
-  background-color: #f5890d;
+  background-color: #0d4bf5;
 }
 
 #pictures{
@@ -147,7 +151,9 @@
   width: 100px;
   margin-left: 6.2rem;  /* modify this value to fix position of pictures in choose method */
 }
-
+.titler{
+  font-size: 40px !important;
+}
 .disable{
   cursor: no-drop !important;
   opacity: .7;
