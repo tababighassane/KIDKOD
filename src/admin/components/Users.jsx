@@ -20,14 +20,14 @@ const Users = (props) => {
           console.log("search => ",search);
           setResult(users);
           search?.key === "" || search?.value === "" ? "" 
-               : setResult(result.filter(user => search?.key === "username" ? user.username.includes(search?.value) : search?.key === "email" ? user.email.includes(search?.value) : search?.key === "level" ? user.level.includes(search?.value) : ""));
+               : setResult(result.filter(user => search?.key === "username" ? user.username.includes(search?.value) : search?.key === "email" ? user.email.includes(search?.value) : search?.key === "level" ? user.level.includes(search?.value) : <div/>));
      }
 
      return(
           <div className={props.type.includes("all") ? "container-fluid" : "w70"}>
                {props.type.includes("all") ? 
                (<div className="row search-div">
-                    <span> &nbsp; All students : {result.length}</span>
+                    <span> All students : {result.length}</span>
                     <input className="input" type="text" placeholder="serach" onChange={(e)=>setSearch({...search, value: e.target.value})} />
                     <select className="select" onChange={(e)=>setSearch({...search, key: e.target.value})} name="key">
                          <option value="">&nbsp; &nbsp; &nbsp;</option>
@@ -60,7 +60,7 @@ const Users = (props) => {
                                                   (<tr key={i}>
                                                        {props.type.includes("username") || props.type.includes("all") ?
                                                        (<td className="user-label">
-                                                            <img src={user.loginpic||user.picture} alt="" />
+                                                            {/* <img src={user.loginpic||user.picture} alt="" /> */}
                                                             <span className="user-link label">{user.username}</span>
                                                             <span className="user-link user-subhead">member</span>
                                                        </td>):('')}
