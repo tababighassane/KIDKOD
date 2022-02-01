@@ -61,3 +61,30 @@ a {
 	z-index: 99;
 	width: 60%;
 }
+
+.image-load{
+	position: absolute;
+	top: -10px;
+	left: -2px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 1000px;
+	width: 2050px;
+	background-color: rgb(255, 255, 255);
+}
+/* .image-load >*{
+	outline: 1px solid red;
+}  */
+
+.loadcontainer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#loadingtext{
+	margin-left: 90px;
+}

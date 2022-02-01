@@ -21,13 +21,6 @@ body {
   background-size: cover;
 }
 
-.login {
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
-  margin-left: 50%;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -35,12 +28,13 @@ body {
 .contact {
   display: flex;
   flex-direction: column;
-  width: 75vw;
-  height: 85vh;
+  font-size: 22px;
+  margin-left: 40%;
+  width: 100%;
+
 }
 .contact > * {
   margin: 0.5rem 0;
-  font-size: 22px;
   font-weight: 600;
   color: #222;
 }

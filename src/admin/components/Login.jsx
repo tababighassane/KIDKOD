@@ -31,9 +31,8 @@ const Login = (props) => {
      };
 
      return (
-     <div className="login">
-          <div className="left-div-admin"></div>
-          <div className="contact">
+     <div className="login-admin">
+          <div className="contact-admin">
                <h3 className="titlee">Sign In</h3>
                <input value={signin.username} onChange={(e) => setSignin({ ...signin, username: e.target.value })} name="username" placeholder="username" type="text" />
                <input value={signin.password} onChange={(e) => setSignin({ ...signin, password: e.target.value })} name="password" placeholder="password" type="password" />

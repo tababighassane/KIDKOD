@@ -13,7 +13,7 @@
   --search-btn-hover: #67b26b;
 }
 
-.login {
+.login-admin {
   display: flex;
   justify-content: center;
   margin-top : 20rem;
@@ -49,20 +49,19 @@
   cursor: pointer;
 }
 
-.contact {
+.contact-admin {
   display: flex;
   flex-direction: column;
   width : 75vw;
   height: 100vh;
-  margin-top: -100px !important;
 }
-.contact > *{
+.contact-admin > *{
   margin: .5rem 0;
   font-size: 18px;
   font-weight: 600;
   color: #222;
 }
-.contact input {
+.contact-admin input {
   font-size: 17px;
   width : 300px;
   height: 40px;
@@ -75,7 +74,7 @@
   border-radius: 10px;
   font-weight: 500;
 }
-.contact button {
+.contact-admin button {
   margin: 0.5rem 0;
   margin-right: 1rem;
   padding: 0 1rem;
@@ -89,7 +88,7 @@
   border: none;
   font-size: larger;
 }
-.contact button:hover {
+.contact-admin button:hover {
   background-color: #0d4bf5;
 }
 

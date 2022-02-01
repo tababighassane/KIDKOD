@@ -2,6 +2,7 @@ import "../style/Login.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
 //prettier ignore
@@ -115,7 +116,7 @@ const Login = () => {
                          .then(({ data }) => {
                               console.log("response signup :", data);
                               setSignup({ username: "", email: "", password: "", password2: "", status: "account created" });
-                              navigateTo("/");
+                              navigateTo("/login");
                          })
                          .catch((error) => {
                               if (error.response.data.includes("E11000 duplicate key error"))
@@ -170,15 +171,16 @@ const Login = () => {
      };
 
      return (
-          <div>
-               {/* <Navbar /> */}
+
                <div className="login">
+                    <Link to="/">
                     <img
                     className="logo-login"
                     width="170"
                     alt="kid center"
                     src="https://media.discordapp.net/attachments/902266709568782436/934024200069472296/kidkod.png"
                     />
+                    </Link>
                     {view === "signup" ? (
                          <div className="contact">
                               <h3 className="titler">Sign Up</h3>
@@ -288,7 +290,6 @@ const Login = () => {
                          )
                     )}
                </div>
-          </div>
      );
 };
 
