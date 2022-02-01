@@ -6,102 +6,93 @@ import WinAnimation from "./winAndLooseAnimation/WinAnimation.jsx";
 import LooseAnimation from "./winAndLooseAnimation/LooseAnimation.jsx";
 
 const DropArea = ({ user, setUser, close }) => {
-	const [challengeData, setchallengeData] = useState([
-		{ choices: [], equation: "" },
-	]);
-	const [index, setIndex] = useState(0);
-	const [choices, setchoices] = useState(challengeData[index].choices);
-	const [equation, setequation] = useState(challengeData[index].equation);
-	const [responce, setresponce] = useState([]);
-	const [goal, setGoal] = useState(false);
-	const [challengeResponce, setchallengeResponce] = useState([]);
-	const [submitFlag, setsubmitFlag] = useState(false);
-	const [handAnimation, sethandAnimation] = useState(true);
-	const [view, setview] = useState({
-		challenge: true,
-		win: false,
-		loose: false,
-	});
+  const [challengeData, setchallengeData] = useState([
+    { choices: [], equation: "" },
+  ]);
+  const [index, setIndex] = useState(0);
+  const [choices, setchoices] = useState(challengeData[index].choices);
+  const [equation, setequation] = useState(challengeData[index].equation);
+  const [responce, setresponce] = useState([]);
+  const [goal, setGoal] = useState(false);
+  const [challengeResponce, setchallengeResponce] = useState([]);
+  const [submitFlag, setsubmitFlag] = useState(false);
+  const [handAnimation, sethandAnimation] = useState(true);
+  const [view, setview] = useState({
+    challenge: true,
+    win: false,
+    loose: false,
+  });
 
-	useEffect(() => {
-		axios
-			.get("http://localhost:8000/api/dndChallenge/1")
-			.then(({ data }) => {
-				setchallengeData(data.challengeData);
-				setchoices(data.challengeData[index].choices);
-				setequation(data.challengeData[index].equation);
-			});
-		stopHandAnimation();
-	}, []);
+  useEffect(() => {
+    axios.get("http://localhost:8000/api/dndChallenge/1").then(({ data }) => {
+      setchallengeData(data.challengeData);
+      setchoices(data.challengeData[index].choices);
+      setequation(data.challengeData[index].equation);
+    });
+    stopHandAnimation();
+  }, []);
 
-	const stopHandAnimation = () => {
-		console.log("wait 3 sec");
-		setTimeout(() => {
-			console.log("done");
-			sethandAnimation(false);
-		}, 11000);
-	};
+  const stopHandAnimation = () => {
+    console.log("wait 3 sec");
+    setTimeout(() => {
+      console.log("done");
+      sethandAnimation(false);
+    }, 17500);
+  };
 
-	const handelGoalClick = () => {
-		setGoal(!goal);
-		console.log(goal);
-	};
+  const handelGoalClick = () => {
+    setGoal(!goal);
+    console.log(goal);
+  };
 
-	const passeToNext = () => {
-		if (index < challengeData.length - 1) {
-			setIndex(index + 1);
-			setchoices(challengeData[index + 1].choices);
-			setequation(challengeData[index + 1].equation);
-			setresponce([]);
-		}
-		console.log("challengeResponce", challengeResponce);
-		if (challengeResponce.length < challengeData.length) {
-			if (responce[0]) {
-				setchallengeResponce([
-					...challengeResponce,
-					responce[0].name === challengeData[index].correct,
-				]);
-			} else {
-				setchallengeResponce([...challengeResponce, false]);
-			}
-		}
+  const passeToNext = () => {
+    if (index < challengeData.length - 1) {
+      setIndex(index + 1);
+      setchoices(challengeData[index + 1].choices);
+      setequation(challengeData[index + 1].equation);
+      setresponce([]);
+    }
+    console.log("challengeResponce", challengeResponce);
+    if (challengeResponce.length < challengeData.length) {
+      if (responce[0]) {
+        setchallengeResponce([
+          ...challengeResponce,
+          responce[0].name === challengeData[index].correct,
+        ]);
+      } else {
+        setchallengeResponce([...challengeResponce, false]);
+      }
+    }
 
-		if (challengeResponce.length === challengeData.length)
-			setsubmitFlag(true);
-	};
+    if (challengeResponce.length === challengeData.length) setsubmitFlag(true);
+  };
 
-	const submitResponce = () => {
-		let test = challengeResponce.reduce(
-			(acc, ele) => (ele ? acc + 1 : acc),
-			0
-		);
-		console.log(test);
-		if (test > 3) {
-			setview({
-				challenge: false,
-				win: true,
-				loose: false,
-			});
-			setUser({ ...user, level: user.level + 1 });
-			axios
-				.put(
-					`http://localhost:8000/api/users/updateLevel/${user._id}`,
-					{
-						level: user.level + 1,
-					}
-				)
-				.then(({ data }) => {
-					console.log(data.level);
-				})
-				.catch((err) => console.log(err));
-		} else {
-			setview({
-				challenge: false,
-				win: false,
-				loose: true,
-			});
-		}
-	};
+  const submitResponce = () => {
+    let test = challengeResponce.reduce((acc, ele) => (ele ? acc + 1 : acc), 0);
+    console.log(test);
+    if (test > 3) {
+      setview({
+        challenge: false,
+        win: true,
+        loose: false,
+      });
+      setUser({ ...user, level: user.level + 1 });
+      axios
+        .put(`http://localhost:8000/api/users/updateLevel/${user._id}`, {
+          level: user.level + 1,
+        })
+        .then(({ data }) => {
+          console.log(data.level);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      setview({
+        challenge: false,
+        win: false,
+        loose: true,
+      });
+    }
+  };
 
 	const [{ isOver }, dropRef] = useDrop({
 		accept: "drag",
@@ -136,9 +127,12 @@ const DropArea = ({ user, setUser, close }) => {
 							<video
 								src='/src/components/static/edited.mp4'
 								type='video/mp4'
-								autoPlay='autoplay'
+								// autoPlay='autoplay'
 								loop='loop'
-							></video>
+								muted='true'
+								controls
+							>
+							</video>
 						</div>
 					)}
 					<div className='icons'>
@@ -244,49 +238,45 @@ const DropArea = ({ user, setUser, close }) => {
                   onClick={close}
                 /> */}
 
-								<ul className='resultList'>
-									{challengeResponce.map((e, i) => (
-										<li
-											key={i}
-											className={e ? "correct" : "wrong"}
-										>
-											question {i + 1} is {e && "correct"}{" "}
-											{!e && "wrong"}{" "}
-										</li>
-									))}
-									<li>{true}</li>
-								</ul>
-								<button onClick={close} className='closeBTN'>
-									Close
-								</button>
-							</div>
-						)}
-					</div>
-					<div>
-						{view.win && (
-							<div className='dnd-container'>
-								<h4>Challenge Successfully passed</h4>
-								<video
-									className='winVideo'
-									loading='lazy'
-									muted='muted'
-									src='https://cdnl.iconscout.com/lottie/premium/thumb/congratulations-4156453-3444583.mp4'
-									width='441.0714285714285'
-									height='264.6428571428571'
-									type='video/mp4'
-									autoplay='autoplay'
-									loop='loop'
-								></video>{" "}
-								<button onClick={close} className='closeBTN'>
-									Close
-								</button>
-							</div>
-						)}
-					</div>
-				</div>
-			)}
-		</React.Fragment>
-	);
+                <ul className="resultList">
+                  {challengeResponce.map((e, i) => (
+                    <li key={i} className={e ? "correct" : "wrong"}>
+                      question {i + 1} is {e && "correct"} {!e && "wrong"}{" "}
+                    </li>
+                  ))}
+                  <li>{true}</li>
+                </ul>
+                <button onClick={close} className="closeBTN">
+                  Close
+                </button>
+              </div>
+            )}
+          </div>
+          <div>
+            {view.win && (
+              <div className="dnd-container">
+                <h4>Challenge Successfully passed</h4>
+                <video
+                  className="winVideo"
+                  loading="lazy"
+                  muted="muted"
+                  src="https://cdnl.iconscout.com/lottie/premium/thumb/congratulations-4156453-3444583.mp4"
+                  width="441.0714285714285"
+                  height="264.6428571428571"
+                  type="video/mp4"
+                  autoplay="autoplay"
+                  loop="loop"
+                ></video>{" "}
+                <button onClick={close} className="closeBTN">
+                  Close
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </React.Fragment>
+  );
 };
 
 export default DropArea;

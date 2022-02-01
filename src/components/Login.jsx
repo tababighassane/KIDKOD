@@ -170,18 +170,17 @@ const Login = () => {
      };
 
      return (
-          <div>
-               {/* <Navbar /> */}
+
                <div className="login">
-                    <div className="left-div">
-                         {/* <h1>Create an account</h1>
-                         <p>it's totally free and secure</p>
-                         <p>we don't share your </p>
-                         <p>informations with others</p> */}
-                    </div>
+                    <img
+                    className="logo-login"
+                    width="170"
+                    alt="kid center"
+                    src="https://media.discordapp.net/attachments/902266709568782436/934024200069472296/kidkod.png"
+                    />
                     {view === "signup" ? (
                          <div className="contact">
-                              <h3>Sign Up</h3>
+                              <h3 className="titler">Sign Up</h3>
                               <span>
                                    Have an account ? &nbsp;
                                    <span className="cursor-pointer" onClick={() => { reset("signup"); setView("signin"); }} >
@@ -215,7 +214,7 @@ const Login = () => {
                          </div>
                     ) : view === "signin" ? (
                          <div className="contact">
-                              <h3>Sign In</h3>
+                              <h3 className="titler">Sign In</h3>
                               <span>
                                    Don't have an account ? &nbsp;
                                    <span className="cursor-pointer" onClick={() => { reset("signin"); setView("signup"); }}>
@@ -240,7 +239,9 @@ const Login = () => {
                                    )}
                                    <label name="password" className={signin.method === "password" || getdisableUsername(`__${signin.username}`) ? "checked-radio" : ""} onClick={(e) => setSignin({ ...signin, method: "password" })}>
                                         <input type="radio" name="password" value="password" />
-                                        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/lock-and-key-4727261-3928178.png" />
+                                        <div className="imagePwd">
+                                        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/password-protected-lock-3943035-3273339.png" />
+                                        </div>
                                         password
                                    </label>
                               </div>
@@ -286,7 +287,6 @@ const Login = () => {
                          )
                     )}
                </div>
-          </div>
      );
 };
 
