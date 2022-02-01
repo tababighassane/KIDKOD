@@ -170,8 +170,7 @@ const Login = () => {
      };
 
      return (
-          <div>
-               {/* <Navbar /> */}
+
                <div className="login">
                     <img
                     className="logo-login"
@@ -288,7 +287,6 @@ const Login = () => {
                          )
                     )}
                </div>
-          </div>
      );
 };
 

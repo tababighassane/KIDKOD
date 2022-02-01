@@ -35,6 +35,7 @@ body {
 .contact {
   display: flex;
   flex-direction: column;
+  justify-content: left;
   width: 75vw;
   height: 85vh;
 }
