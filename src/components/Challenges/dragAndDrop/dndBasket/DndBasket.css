@@ -44,6 +44,32 @@
 	text-shadow: 0px 0px 0 rgb(61, 20, 243), 1px 1px 0 rgb(61, 20, 243),
 		2px 2px 0 rgb(61, 20, 243), 3px 3px 0 rgb(61, 20, 243);
 }
+/* .hand-animation-basket {
+	height: 600px;
+	width: 1000px;
+} */
+
+.hand-animation-basket {
+	border-radius: 20px;
+	position: absolute;
+	height: 600px;
+	width: 1000px;
+	padding-left: 100px;
+	background: rgba(16, 16, 16, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hand-animation-basket video {
+	position: absolute;
+	height: 600px;
+	width: 800px;
+	margin-left: auto;
+	border-radius: 20px;
+}
 
 .dnd-container2 {
 	height: 600px;

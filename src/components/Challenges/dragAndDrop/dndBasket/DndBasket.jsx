@@ -134,16 +134,16 @@ const DndBasket = ({ user, setUser, close }) => {
 		loose: false,
 	});
 
-	// useEffect(() => {
-	// 	axios
-	// 		.get("http://localhost:8000/api/dndChallenge/1")
-	// 		.then(({ data }) => {
-	// 			setchallengeData(data.challengeData);
-	// 			setchoices(data.challengeData[index].choices);
-	// 			setequation(data.challengeData[index].equation);
-	// 		});
-	// 	stopHandAnimation();
-	// }, []);
+	useEffect(() => {
+		// axios
+		// 	.get("http://localhost:8000/api/dndChallenge/1")
+		// 	.then(({ data }) => {
+		// 		setchallengeData(data.challengeData);
+		// 		setchoices(data.challengeData[index].choices);
+		// 		setequation(data.challengeData[index].equation);
+		// 	});
+		stopHandAnimation();
+	}, []);
 
 	const stopHandAnimation = () => {
 		setTimeout(() => {
@@ -257,18 +257,18 @@ const DndBasket = ({ user, setUser, close }) => {
 		<React.Fragment>
 			{view.challenge ? (
 				<div className='dnd-container2'>
-					{/* {handAnimation && (
-						<div className='hand-animation'>
+					{handAnimation && (
+						<div className='hand-animation-basket'>
 							<video
-								loading='lazy'
-								muted='muted'
-								src='https://cdn.discordapp.com/attachments/902991650727538769/932640853799866458/dragAndDropInstractions.mp4'
+								src='/src/components/static/mouse.mp4'
 								type='video/mp4'
-								autoplay='autoplay'
+								autoPlay='autoplay'
 								loop='loop'
+								muted='true'
+								// controls
 							></video>
 						</div>
-					)} */}
+					)}
 					<div className='iconsDnD'>
 						<img
 							className='challenge-goal icon'
