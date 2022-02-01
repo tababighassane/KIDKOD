@@ -257,18 +257,18 @@ const DndBasket = ({ user, setUser, close }) => {
 		<React.Fragment>
 			{view.challenge ? (
 				<div className='dnd-container2'>
-					{/* {handAnimation && (
-						<div className='hand-animation'>
+					{handAnimation && (
+						<div className='hand-animation-basket'>
 							<video
-								loading='lazy'
-								muted='muted'
-								src='https://cdn.discordapp.com/attachments/902991650727538769/932640853799866458/dragAndDropInstractions.mp4'
+								src='/src/components/static/mouse.mp4'
 								type='video/mp4'
-								autoplay='autoplay'
+								autoPlay='autoplay'
 								loop='loop'
+								muted='true'
+								// controls
 							></video>
 						</div>
-					)} */}
+					)}
 					<div className='iconsDnD'>
 						<img
 							className='challenge-goal icon'

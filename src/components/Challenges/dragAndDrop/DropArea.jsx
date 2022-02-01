@@ -136,9 +136,12 @@ const DropArea = ({ user, setUser, close }) => {
 							<video
 								src='/src/components/static/edited.mp4'
 								type='video/mp4'
-								autoPlay='autoplay'
+								// autoPlay='autoplay'
 								loop='loop'
-							></video>
+								muted='true'
+								controls
+							>
+							</video>
 						</div>
 					)}
 					<div className='icons'>
