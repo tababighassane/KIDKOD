@@ -895,28 +895,28 @@ const Vis = () => {
 			return x >= min && x <= max;
 		}
 
-		var oldman = false;
+		// var oldman = false;
 		document.onkeyup = function (e) {
 			if (
 				e.keyCode === 13 &&
-				oldman === false &&
+				// oldman === false &&
 				between(box.position.x, 38.39, 52.11) &&
 				between(box.position.z, -13.67, 0.92)
 			) {
        
 				setlevel(1);
-				const talk = new Audio(
-					"/src/components/static/Enregistrement.m4a"
-				);
+				// const talk = new Audio(
+				// 	"/src/components/static/Enregistrement.m4a"
+				// );
 
-				talk.play();
+				// talk.play();
 
-				oldman = true;
-				if (oldman === true) {
-					setTimeout(() => {
-						oldman = false;
-					}, 6000);
-				}
+				// oldman = true;
+				// if (oldman === true) {
+				// 	setTimeout(() => {
+				// 		oldman = false;
+				// 	}, 6000);
+				// }
 			}
       if (
 				e.keyCode === 13 &&
@@ -1269,6 +1269,7 @@ const Vis = () => {
 						music.play()
 						music.Loop=true
 						musicStatus=true
+						music.volume=0.01
 						if(musicStatus===true){
 							setTimeout(()=>{musicStatus=false},2222222)
 						}
