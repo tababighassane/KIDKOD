@@ -136,8 +136,11 @@ const DropArea = ({ user, setUser, close }) => {
 							<video
 								src='/src/components/static/edited.mp4'
 								type='video/mp4'
-								autoPlay='autoplay'
+								
 								loop='loop'
+                controls 
+                 autoPlay={"autoplay"}
+                 oncanplay="muted=false"
 							></video>
 						</div>
 					)}

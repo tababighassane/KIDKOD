@@ -1279,6 +1279,7 @@ const Vis = () => {
 				case 40: // backward
 					vehicle.applyEngineForce(keyup ? 0 : engineForce, 2);
 					vehicle.applyEngineForce(keyup ? 0 : engineForce, 3);
+					
         
 					break;
 
