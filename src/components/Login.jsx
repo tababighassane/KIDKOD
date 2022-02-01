@@ -170,15 +170,11 @@ const Login = () => {
      };
 
      return (
-          <div>
-               {/* <Navbar /> */}
+
                <div className="login">
-                    <div className="left-div">
-                         {/* <h1>Create an account</h1>
-                         <p>it's totally free and secure</p>
-                         <p>we don't share your </p>
-                         <p>informations with others</p> */}
-                    </div>
+                    {/* <div className="left-div">
+                         
+                    </div> */}
                     {view === "signup" ? (
                          <div className="contact">
                               <h3 className="titler">Sign Up</h3>
@@ -288,7 +284,6 @@ const Login = () => {
                          )
                     )}
                </div>
-          </div>
      );
 };
 

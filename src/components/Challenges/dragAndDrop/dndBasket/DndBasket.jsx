@@ -134,16 +134,16 @@ const DndBasket = ({ user, setUser, close }) => {
 		loose: false,
 	});
 
-	// useEffect(() => {
-	// 	axios
-	// 		.get("http://localhost:8000/api/dndChallenge/1")
-	// 		.then(({ data }) => {
-	// 			setchallengeData(data.challengeData);
-	// 			setchoices(data.challengeData[index].choices);
-	// 			setequation(data.challengeData[index].equation);
-	// 		});
-	// 	stopHandAnimation();
-	// }, []);
+	useEffect(() => {
+		// axios
+		// 	.get("http://localhost:8000/api/dndChallenge/1")
+		// 	.then(({ data }) => {
+		// 		setchallengeData(data.challengeData);
+		// 		setchoices(data.challengeData[index].choices);
+		// 		setequation(data.challengeData[index].equation);
+		// 	});
+		stopHandAnimation();
+	}, []);
 
 	const stopHandAnimation = () => {
 		setTimeout(() => {
