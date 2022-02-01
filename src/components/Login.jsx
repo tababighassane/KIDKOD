@@ -172,9 +172,12 @@ const Login = () => {
      return (
 
                <div className="login">
-                    {/* <div className="left-div">
-                         
-                    </div> */}
+                    <img
+                    className="logo-login"
+                    width="170"
+                    alt="kid center"
+                    src="https://media.discordapp.net/attachments/902266709568782436/934024200069472296/kidkod.png"
+                    />
                     {view === "signup" ? (
                          <div className="contact">
                               <h3 className="titler">Sign Up</h3>

@@ -15,17 +15,17 @@
   --search-btn-hover: #67b26b;
 }
 
-body{
-  background-image: url("https://cdn.discordapp.com/attachments/902266709568782436/934281461371125780/loginPic.png");
+body {
+  background-image: url("https://cdn.discordapp.com/attachments/902991650727538769/938059983210291251/qqq.png");
   background-repeat: no-repeat;
   background-size: cover;
-  /* padding-top : 15%;
-  padding-left: 15%; */
 }
 
 .login {
   display: flex;
   justify-content: center;
+  margin-top: 5rem;
+  margin-left: 50%;
 }
 
 .cursor-pointer {
@@ -138,4 +138,35 @@ body{
 .disable {
   cursor: no-drop !important;
   opacity: 0.7;
+}
+
+.logo-login{
+  position: absolute;
+  margin-left: 2rem;
+  top : 1rem;
+  height: 170px;
+  width: 170px;
+  animation-name: logo;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes logo {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  50% {
+    left: 0px;
+    top: 0px;
+  }
+  75% {
+    left: 250px;
+    top: 0px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
 }
